@@ -54,13 +54,13 @@ void loop(void) {
       lcd.print("ABRIENDO");
       digitalWrite(LED_PIN, LOW);
       abrir();
-      delay(1000);
+      delay(10000);
       STOP();
-      delay(5000);
+      delay(50000);
       lcd.setCursor(0, 1);
       lcd.print("CERRANDO");
       cerrar();
-      delay(1000);
+      delay(10000);
       STOP();
     } else {
       lcd.setCursor(0, 0);
@@ -68,7 +68,7 @@ void loop(void) {
       cerrar();
       lcd.setCursor(0, 1);
       lcd.print("CERRANDO");
-      delay(1000);
+      delay(10000);
       STOP();
     }
   }
@@ -92,7 +92,7 @@ bool checkCardUID(uint8_t *uid) {
     } else {
       contador = 0;
     }
-  } 
+  }
   return state;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,10 +107,10 @@ void cerrar() {
   digitalWrite(motorA2, HIGH);
   digitalWrite(motorb1, LOW);
   digitalWrite(motorb2, LOW);
-} 
+}
 void STOP() {
   digitalWrite(motorA1, LOW);
   digitalWrite(motorA2, LOW);
   digitalWrite(motorb1, LOW);
   digitalWrite(motorb2, LOW);
-} 
+}
